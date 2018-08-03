@@ -12,6 +12,13 @@ fetch('https://api.github.com/repos/:your_ghname/:your_repo/commits/:sha/comment
 }).then(res => console.log(res));
 
 function showForkedRepo(res){
+  `<div><li>"${res}"</li></div>`
+}
+
+function getIssues() {
+}
+
+function showIssues(json) {
   `<div>
   <li>
   <a href="#"
@@ -22,11 +29,6 @@ function showForkedRepo(res){
   </a>
   </div>`
 }
-
-function getIssues() {
-}
-
-function showIssues(json) {
 }
 
 function createIssue() {
