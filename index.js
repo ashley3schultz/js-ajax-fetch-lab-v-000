@@ -1,8 +1,3 @@
-
-const postData = {
-  body: 'Great stuff'
-};
-
 fetch('https://api.github.com/repos/:your_ghname/:your_repo/commits/:sha/comments', {
   method: 'POST',
   body: JSON.stringify(postData),
@@ -27,6 +22,8 @@ function createIssue() {
   const repo = 'learn-co-curriculum/javascript-fetch-lab'
   fetch(`api.github.com/repos/${repo}/issues`, {
     method: 'post',
+    title: JSON.stringify(iss.title),
+    body: JSON.stringify(iss.body),
     headers: {
       Authorization: `token ${getToken()}`
     }
