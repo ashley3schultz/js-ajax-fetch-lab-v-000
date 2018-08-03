@@ -11,7 +11,7 @@ function getIssues() {
 }
 
 function showIssues(json) {
-  return json.map(issue =>{return `<li>${issue}</li>`}
+  return json.map(issue =>{return `<h4>Issues</h4><a href="${json.html_url}">${json.title}</a>`}
 }
 
 function createIssue() {
@@ -24,7 +24,7 @@ function createIssue() {
       Authorization: `token ${getToken()}`
     },
     body: JSON.stringify(issuedata)
-  }).then(res => getIssues())
+  }).then(res => res.json()).then(getIssues())
   }
 
 function showResults(json) {
