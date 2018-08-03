@@ -11,9 +11,21 @@ function showForkedRepo(res){
 }
 
 function getIssues() {
+  const repo = 'learn-co-curriculum/javascript-fetch-lab'
+  fetch(`api.github.com/repos/${repo}/issues`, {
+    headers: {
+      Authorization: `token ${getToken()}`
+    }
+  }).then(res => res.json()).then(json =>{$("#issues").html(showIssues(json))});
+}
 }
 
 function showIssues(json) {
+  return json.map(issue =>{
+    return `<li>${issue}</li>`
+  }
+    
+  )
   `<div><li>"${json}"</li></div>`
 }
 
