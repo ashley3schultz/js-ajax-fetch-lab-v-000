@@ -21,9 +21,7 @@ function getIssues() {
 }
 
 function showIssues(json) {
-  return json.map(issue =>{
-    return `<li>${issue}</li>`
-  }
+  return json.map(issue =>{return `<li>${issue}</li>`}
 }
 
 function createIssue() {
