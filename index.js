@@ -1,3 +1,5 @@
+const token = 'e26ebb0f26582930c9d38ed53b7956278cf4fc11'
+
 function getIssues() {
 }
 
