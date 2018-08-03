@@ -1,14 +1,6 @@
 const repo = 'learn-co-curriculum/javascript-fetch-lab'
 const gh = 'api.github.com/repos'
 
-fetch('https://api.github.com/repos/:your_ghname/:your_repo/commits/:sha/comments', {
-  method: 'POST',
-  body: JSON.stringify(postData),
-  headers: {
-    Authorization: `token ${getToken()}`
-  }
-}).then(res => console.log(res));
-
 function showForkedRepo(res){
   `<div><li><a href="#" "${res}" onclick = "showCommits(this)">Show Commits</li></a></div>`
 }
