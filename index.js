@@ -1,4 +1,4 @@
-const token = 'e26ebb0f26582930c9d38ed53b7956278cf4fc11'
+
 
 fetch('https://api.github.com/user/repos', {
   headers: {
@@ -10,7 +10,7 @@ fetch('https://api.github.com/user/repos', {
 const postData = {
   body: 'Great stuff'
 };
- 
+
 fetch('https://api.github.com/repos/:your_ghname/:your_repo/commits/:sha/comments', {
   method: 'POST',
   body: JSON.stringify(postData),
@@ -38,7 +38,6 @@ function forkRepo() {
 }
 
 function getToken() {
-  //change to your token to run in browser, but set
-  //back to '' before committing so all tests pass
-  return ''
+  const token = 'e26ebb0f26582930c9d38ed53b7956278cf4fc11'
+  return token //''
 }
