@@ -32,7 +32,7 @@ function showIssues(json) {
 function createIssue() {
   iss = {"title": $('#title').val(), "body":  $('#body').val()}
   const repo = 'learn-co-curriculum/javascript-fetch-lab'
-  fetch(`api.github.com/repos/${repo}/issues/new`, {
+  fetch(`api.github.com/repos/${repo}/issues`, {
     method: 'post',
     headers: {
       Authorization: `token ${getToken()}`
