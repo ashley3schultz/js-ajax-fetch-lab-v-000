@@ -12,15 +12,7 @@ fetch('https://api.github.com/repos/:your_ghname/:your_repo/commits/:sha/comment
 }).then(res => console.log(res));
 
 function showForkedRepo(res){
-  `<div>
-  <li>
-  <a href="#"
-  "${res}"
-  onclick = "showCommits(this)">
-  Show Commits
-  </li>
-  </a>
-  </div>`
+  `<div><li><a href="#" "${res}" onclick = "showCommits(this)">Show Commits</li></a></div>`
 }
 
 function getIssues() {
