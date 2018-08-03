@@ -1,13 +1,8 @@
-const repo = 'learn-co-curriculum/javascript-fetch-lab'
-const gh = 'api.github.com/repos'
-
-function showForkedRepo(res){
-  `<div><li>"${res}"</li></div>`
-}
+const repo = 'api.github.com/repos/learn-co-curriculum/javascript-fetch-lab'
 
 function getIssues() {
   const repo = 'cdhenry/javascript-fetch-lab'
-  fetch(`https://api.github.com/repos/${repo}/issues`, {
+  fetch(`${repo}/issues`, {
   })
     .then(res => res.json())
     .then(data => {
@@ -22,29 +17,29 @@ function showIssues(json) {
 }
 
 function createIssue() {
-  const title = document.getElementById('title').value
-  const body = document.getElementById('body').value
-  const issuedata = {title: title, body: body}
-  fetch(`${gh}/${repo}/issues`, {
+  const issueTitle = document.getElementById('title').value
+  const issueBody = document.getElementById('body').value
+  const postData = { title: issueTitle, body: issueBody }
+  fetch(`${repo}/issues`, {
     method: 'post',
     headers: {
       Authorization: `token ${getToken()}`
     },
-    body: JSON.stringify(issuedata)
-  }).then(res => res.json()).then(getIssues())
-  }
+    body: JSON.stringify(postData)
+  }).then(res => res.json()).then(getIssues());
+}
 
 function showResults(json) {
   $('#results').append(`<h4>Forked Successfully!</h4><a href="${json.html_url}">${json.full_name}</a>`);
 }
 
 function forkRepo() {
-  fetch(`${gh}/${repo}/forks`, {
+  fetch(`${repo}/forks`, {
     method: 'post',
     headers: {
       Authorization: `token ${getToken()}`
     }
-  }).then(res => res.json()).then(showResults)
+  }).then(res => res.json()).then(showResults);
 }
 
 function getToken() {
