@@ -18,12 +18,13 @@ function showIssues(json) {
 }
 
 function createIssue() {
-  iss = {"title": $('#title').val(), "body":  $('#body').val()}
+  const title = {title: "${$('#title').val()}"}
+  const body = {body: "${$('#body').val()}"}
   const repo = 'learn-co-curriculum/javascript-fetch-lab'
   fetch(`api.github.com/repos/${repo}/issues`, {
     method: 'post',
-    title: JSON.stringify(iss.title),
-    body: JSON.stringify(iss.body),
+    title: JSON.stringify(title),
+    body: JSON.stringify(body),
     headers: {
       Authorization: `token ${getToken()}`
     }
