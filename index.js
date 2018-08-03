@@ -1,3 +1,6 @@
+const repo = 'learn-co-curriculum/javascript-fetch-lab'
+const gh = 'api.github.com/repos'
+
 fetch('https://api.github.com/repos/:your_ghname/:your_repo/commits/:sha/comments', {
   method: 'POST',
   body: JSON.stringify(postData),
@@ -11,8 +14,7 @@ function showForkedRepo(res){
 }
 
 function getIssues() {
-  const repo = 'learn-co-curriculum/javascript-fetch-lab'
-  fetch(`api.github.com/repos/${repo}/issues`, {
+  fetch(`${gh}/${repo}/issues`, {
     headers: {
       Authorization: `token ${getToken()}`
     }
@@ -28,8 +30,7 @@ function createIssue() {
   const title = document.getElementById('title').value
   const body = document.getElementById('body').value
   const issuedata = {title: title, body: body}
-  const repo = 'learn-co-curriculum/javascript-fetch-lab'
-  fetch(`api.github.com/repos/${repo}/issues`, {
+  fetch(`${gh}/${repo}/issues`, {
     method: 'post',
     headers: {
       Authorization: `token ${getToken()}`
@@ -43,7 +44,7 @@ function showResults(json) {
 
 function forkRepo() {
   const repo = 'learn-co-curriculum/javascript-fetch-lab'
-  fetch(`api.github.com/repos/${repo}`, {
+  fetch(`${gh}/${repo}`, {
     method: 'post',
     headers: {
       Authorization: `token ${getToken()}`
