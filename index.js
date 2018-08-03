@@ -2,7 +2,7 @@ const repo = 'learn-co-curriculum/javascript-fetch-lab'
 const gh = 'api.github.com/repos'
 
 function showForkedRepo(res){
-  `<div><li><a href="#" "${res}" onclick = "showCommits(this)">Show Commits</li></a></div>`
+  `<div><li>"${res}"</li></div>`
 }
 
 function getIssues() {
