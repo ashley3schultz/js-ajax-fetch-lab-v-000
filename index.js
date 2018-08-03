@@ -19,7 +19,7 @@ function getIssues() {
 }
 
 function showIssues(json) {
-  `<div><li>"${res}"</li></div>`
+  `<div><li>"${json}"</li></div>`
 }
 
 function createIssue() {
