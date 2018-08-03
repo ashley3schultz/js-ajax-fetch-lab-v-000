@@ -15,8 +15,7 @@ function showForkedRepo(res){
   `<div>
   <li>
   <a href="#"
-  data-repository="${repo.name}"
-  data-owner="${repo.owner.login}"
+  "${res}"
   onclick = "showCommits(this)">
   Show Commits
   </li>
