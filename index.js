@@ -30,6 +30,8 @@ function showIssues(json) {
 }
 
 function createIssue() {
+  const title = $('#title').val()
+  const body = $('#body').val()
 }
 
 function showResults(json) {
