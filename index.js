@@ -11,6 +11,19 @@ fetch('https://api.github.com/repos/:your_ghname/:your_repo/commits/:sha/comment
   }
 }).then(res => console.log(res));
 
+const showForkedRepo(res){
+  `<div>
+  <li>
+  <a href="#" 
+  data-repository="${repo.name}" 
+  data-owner="${repo.owner.login}" 
+  onclick = "showCommits(this)">
+  Show Commits
+  </li>
+  </a>
+  </div>`
+})
+} 
 
 function getIssues() {
 }
@@ -31,7 +44,7 @@ function forkRepo() {
     headers: {
       Authorization: `token ${getToken()}`
     }
-  }).then(res => res.json()).then(json => showForkedRepo());
+  }).then(res => res.json()).then(json => results =>{$("#results").html(showRepositories(json))});
 }
 
 function getToken() {
