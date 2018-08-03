@@ -1,12 +1,4 @@
 
-
-fetch('https://api.github.com/user/repos', {
-  headers: {
-    Authorization: `token ${token}`
-  }
-}).then(res => res.json()).then(json => console.log(json));
-
-
 const postData = {
   body: 'Great stuff'
 };
@@ -34,7 +26,11 @@ function showResults(json) {
 
 function forkRepo() {
   const repo = 'learn-co-curriculum/javascript-fetch-lab'
-  //use fetch to fork it!
+  fetch(repo, {
+    headers: {
+      Authorization: `token ${token}`
+    }
+  }).then(res => res.json()).then(json => console.log(json));
 }
 
 function getToken() {
