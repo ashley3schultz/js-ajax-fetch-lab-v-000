@@ -6,8 +6,15 @@ function showForkedRepo(res){
 }
 
 function getIssues() {
-  fetch(`${gh}/${repo}/issues`)
-    .then(res => res.json()).then(showIssues(json))
+  const repo = 'cdhenry/javascript-fetch-lab'
+  fetch(`https://api.github.com/repos/${repo}/issues`, {
+  })
+    .then(res => res.json())
+    .then(data => {
+      for (let i = 0; i < data.length; i++){
+        displayIssue(new Issue(data[i]));
+      }
+    });
 }
 
 function showIssues(json) {
