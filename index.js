@@ -7,7 +7,7 @@ fetch('https://api.github.com/repos/:your_ghname/:your_repo/commits/:sha/comment
   method: 'POST',
   body: JSON.stringify(postData),
   headers: {
-    Authorization: `token ${token}`
+    Authorization: `token ${getToken()}`
   }
 }).then(res => console.log(res));
 
