@@ -32,12 +32,12 @@ function showIssues(json) {
 function createIssue() {
   iss = {"title": $('#title').val(), "body":  $('#body').val()}
   const repo = 'learn-co-curriculum/javascript-fetch-lab'
-  fetch(`api.github.com/repos/${repo}`, {
+  fetch(`api.github.com/repos/${repo}/issues/new`, {
     method: 'post',
     headers: {
       Authorization: `token ${getToken()}`
     }
-  }).then(res => res.json()).then(json =>{$("#results").html(showForkedRepo(json))});
+  }).then(res => res.json()).then(json =>{$("#issues").html(showIssues(json))});
   }
 
 function showResults(json) {
