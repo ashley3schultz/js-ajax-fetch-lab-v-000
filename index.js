@@ -19,6 +19,7 @@ function showIssues(json) {
 
 function createIssue() {
   const title = {title: "${$('#title').val()}"}
+  debugger
   const body = {body: "${$('#body').val()}"}
   const repo = 'learn-co-curriculum/javascript-fetch-lab'
   fetch(`api.github.com/repos/${repo}/issues`, {
