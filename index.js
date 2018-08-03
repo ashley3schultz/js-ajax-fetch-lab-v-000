@@ -21,7 +21,6 @@ function showForkedRepo(res){
   </li>
   </a>
   </div>`
-})
 }
 
 function getIssues() {
