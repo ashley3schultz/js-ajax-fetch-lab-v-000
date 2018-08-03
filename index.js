@@ -11,7 +11,8 @@ function getIssues() {
 }
 
 function showIssues(json) {
-  return json.map(issue =>{return `<h4>Issues</h4><a href="${json.html_url}">${json.title}</a>`}
+  return json.map(issue =>{
+     $('#issues').append(`<h4>Issues</h4><a href="${json.html_url}">${json.title}</a>`);
 }
 
 function createIssue() {
