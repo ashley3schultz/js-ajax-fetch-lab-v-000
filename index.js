@@ -30,9 +30,15 @@ function showIssues(json) {
 }
 
 function createIssue() {
-  const title = $('#title').val()
-  const body = $('#body').val()
-}
+  iss = {"title": $('#title').val(), "body":  $('#body').val()}
+  const repo = 'learn-co-curriculum/javascript-fetch-lab'
+  fetch(`api.github.com/repos/${repo}`, {
+    method: 'post',
+    headers: {
+      Authorization: `token ${getToken()}`
+    }
+  }).then(res => res.json()).then(json =>{$("#results").html(showForkedRepo(json))});
+  }
 
 function showResults(json) {
 }
