@@ -6,8 +6,8 @@ function showForkedRepo(res){
 }
 
 function getIssues() {
-  fetch(`${gh}/${repo}/issues`).
-    then(res => res.json()).then(json => $("#issues").html(showIssues(json)))
+  fetch(`${gh}/${repo}/issues`)
+    .then(res => res.json()).then(json => $("#results").html(showIssues(json)))
 }
 
 function showIssues(json) {
@@ -36,7 +36,7 @@ function forkRepo() {
     headers: {
       Authorization: `token ${getToken()}`
     }
-  }).then(res => res.json()).then(json => $("#results").html(showForkedRepo(json)))
+  }).then(res => res.json()).then(json => $("#results").html(showForkedRepo(json)));
 }
 
 function getToken() {
